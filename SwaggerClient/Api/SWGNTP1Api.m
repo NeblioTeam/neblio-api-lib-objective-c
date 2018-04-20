@@ -10,6 +10,7 @@
 #import "SWGGetTokenHoldersResponse.h"
 #import "SWGGetTokenIdResponse.h"
 #import "SWGGetTokenMetadataResponse.h"
+#import "SWGGetTransactionInfoResponse.h"
 #import "SWGIssueTokenRequest.h"
 #import "SWGIssueTokenResponse.h"
 #import "SWGSendTokenRequest.h"
@@ -399,7 +400,7 @@ NSInteger kSWGNTP1ApiMissingParamErrorCode = 234513;
 
 ///
 /// Get Issuance Metadata of Token
-/// Returns the metadata associated with a token at time of issuance.  
+/// Returns the metadata associated with a token at time of issuance. 
 ///  @param tokenid TokenId to request metadata for 
 ///
 ///  @returns SWGGetTokenMetadataResponse*
@@ -546,6 +547,74 @@ NSInteger kSWGNTP1ApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((SWGGetTokenMetadataResponse*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Information On an NTP1 Transaction
+/// Returns detailed information regarding an NTP1 transaction. 
+///  @param txid Neblio txid to get information on. 
+///
+///  @returns SWGGetTransactionInfoResponse*
+///
+-(NSURLSessionTask*) getTransactionInfoWithTxid: (NSString*) txid
+    completionHandler: (void (^)(SWGGetTransactionInfoResponse* output, NSError* error)) handler {
+    // verify the required parameter 'txid' is set
+    if (txid == nil) {
+        NSParameterAssert(txid);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"txid"] };
+            NSError* error = [NSError errorWithDomain:kSWGNTP1ApiErrorDomain code:kSWGNTP1ApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/ntp1/transactioninfo/{txid}"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (txid != nil) {
+        pathParams[@"txid"] = txid;
+    }
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"SWGGetTransactionInfoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((SWGGetTransactionInfoResponse*)data, error);
                                 }
                             }];
 }

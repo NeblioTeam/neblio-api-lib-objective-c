@@ -1,6 +1,6 @@
 # SWGNTP1Api
 
-All URIs are relative to *https://ntp1node.nebl.io:1443*
+All URIs are relative to *https://ntp1node.nebl.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**getTokenId**](SWGNTP1Api.md#gettokenid) | **GET** /ntp1/tokenid/{tokensymbol} | Returns the tokenId representing a token
 [**getTokenMetadataOfIssuance**](SWGNTP1Api.md#gettokenmetadataofissuance) | **GET** /ntp1/tokenmetadata/{tokenid} | Get Issuance Metadata of Token
 [**getTokenMetadataOfUtxo**](SWGNTP1Api.md#gettokenmetadataofutxo) | **GET** /ntp1/tokenmetadata/{tokenid}/{utxo} | Get UTXO Metadata of Token
+[**getTransactionInfo**](SWGNTP1Api.md#gettransactioninfo) | **GET** /ntp1/transactioninfo/{txid} | Information On an NTP1 Transaction
 [**issueToken**](SWGNTP1Api.md#issuetoken) | **POST** /ntp1/issue | Builds a transaction that issues a new NTP1 Token
 [**sendToken**](SWGNTP1Api.md#sendtoken) | **POST** /ntp1/sendtoken | Builds a transaction that sends an NTP1 Token
 
@@ -273,7 +274,7 @@ No authorization required
 
 Get Issuance Metadata of Token
 
-Returns the metadata associated with a token at time of issuance.  
+Returns the metadata associated with a token at time of issuance. 
 
 ### Example 
 ```objc
@@ -357,6 +358,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SWGGetTokenMetadataResponse***](SWGGetTokenMetadataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getTransactionInfo**
+```objc
+-(NSURLSessionTask*) getTransactionInfoWithTxid: (NSString*) txid
+        completionHandler: (void (^)(SWGGetTransactionInfoResponse* output, NSError* error)) handler;
+```
+
+Information On an NTP1 Transaction
+
+Returns detailed information regarding an NTP1 transaction. 
+
+### Example 
+```objc
+
+NSString* txid = @"txid_example"; // Neblio txid to get information on.
+
+SWGNTP1Api*apiInstance = [[SWGNTP1Api alloc] init];
+
+// Information On an NTP1 Transaction
+[apiInstance getTransactionInfoWithTxid:txid
+          completionHandler: ^(SWGGetTransactionInfoResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGNTP1Api->getTransactionInfo: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **txid** | **NSString***| Neblio txid to get information on. | 
+
+### Return type
+
+[**SWGGetTransactionInfoResponse***](SWGGetTransactionInfoResponse.md)
 
 ### Authorization
 

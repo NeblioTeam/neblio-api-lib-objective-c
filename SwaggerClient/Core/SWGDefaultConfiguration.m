@@ -28,7 +28,7 @@
 - (instancetype) init {
     self = [super init];
     if (self) {
-        _host = @"https://ntp1node.nebl.io:1443";
+        _host = @"https://ntp1node.nebl.io";
         _username = @"";
         _password = @"";
         _accessToken= @"";

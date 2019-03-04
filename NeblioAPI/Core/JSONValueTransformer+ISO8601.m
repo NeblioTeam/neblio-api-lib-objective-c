@@ -1,6 +1,6 @@
 #import <ISO8601/NSDate+ISO8601.h>
 #import "JSONValueTransformer+ISO8601.h"
-#import "OAISanitizer.h"
+#import "NEBLSanitizer.h"
 
 @implementation JSONValueTransformer (ISO8601)
 
@@ -11,7 +11,7 @@
 
 - (NSString *)JSONObjectFromNSDate:(NSDate *)date
 {
-    return [OAISanitizer dateToString:date];
+    return [NEBLSanitizer dateToString:date];
 }
 
 @end

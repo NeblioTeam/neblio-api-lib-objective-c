@@ -28,6 +28,9 @@
 /* ID of the token [optional]
  */
 @property(nonatomic) NSString* tokenId;
+/* Example UTXO containing this token. [optional]
+ */
+@property(nonatomic) NSString* someUtxo;
 /* Decimal places the token is divisible to [optional]
  */
 @property(nonatomic) NSNumber* divisibility;

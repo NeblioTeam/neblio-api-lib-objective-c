@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**testnetGetAddressInfo**](NEBLTestnetNTP1Api.md#testnetgetaddressinfo) | **GET** /testnet/ntp1/addressinfo/{address} | Information On a Neblio Address
 [**testnetGetTokenHolders**](NEBLTestnetNTP1Api.md#testnetgettokenholders) | **GET** /testnet/ntp1/stakeholders/{tokenid} | Get Addresses Holding a Token
 [**testnetGetTokenId**](NEBLTestnetNTP1Api.md#testnetgettokenid) | **GET** /testnet/ntp1/tokenid/{tokensymbol} | Returns the tokenId representing a token
-[**testnetGetTokenMetadataOfIssuance**](NEBLTestnetNTP1Api.md#testnetgettokenmetadataofissuance) | **GET** /testnet/ntp1/tokenmetadata/{tokenid} | Get Issuance Metadata of Token
+[**testnetGetTokenMetadata**](NEBLTestnetNTP1Api.md#testnetgettokenmetadata) | **GET** /testnet/ntp1/tokenmetadata/{tokenid} | Get Metadata of Token
 [**testnetGetTokenMetadataOfUtxo**](NEBLTestnetNTP1Api.md#testnetgettokenmetadataofutxo) | **GET** /testnet/ntp1/tokenmetadata/{tokenid}/{utxo} | Get UTXO Metadata of Token
 [**testnetGetTransactionInfo**](NEBLTestnetNTP1Api.md#testnetgettransactioninfo) | **GET** /testnet/ntp1/transactioninfo/{txid} | Information On an NTP1 Transaction
 [**testnetIssueToken**](NEBLTestnetNTP1Api.md#testnetissuetoken) | **POST** /testnet/ntp1/issue | Builds a transaction that issues a new NTP1 Token
@@ -266,15 +266,15 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **testnetGetTokenMetadataOfIssuance**
+# **testnetGetTokenMetadata**
 ```objc
--(NSURLSessionTask*) testnetGetTokenMetadataOfIssuanceWithTokenid: (NSString*) tokenid
+-(NSURLSessionTask*) testnetGetTokenMetadataWithTokenid: (NSString*) tokenid
         completionHandler: (void (^)(NEBLGetTokenMetadataResponse* output, NSError* error)) handler;
 ```
 
-Get Issuance Metadata of Token
+Get Metadata of Token
 
-Returns the metadata associated with a token at time of issuance. 
+Returns the metadata associated with a token. 
 
 ### Example 
 ```objc
@@ -283,14 +283,14 @@ NSString* tokenid = @"tokenid_example"; // TokenId to request metadata for
 
 NEBLTestnetNTP1Api*apiInstance = [[NEBLTestnetNTP1Api alloc] init];
 
-// Get Issuance Metadata of Token
-[apiInstance testnetGetTokenMetadataOfIssuanceWithTokenid:tokenid
+// Get Metadata of Token
+[apiInstance testnetGetTokenMetadataWithTokenid:tokenid
           completionHandler: ^(NEBLGetTokenMetadataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling NEBLTestnetNTP1Api->testnetGetTokenMetadataOfIssuance: %@", error);
+                            NSLog(@"Error calling NEBLTestnetNTP1Api->testnetGetTokenMetadata: %@", error);
                         }
                     }];
 ```

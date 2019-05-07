@@ -1,6 +1,6 @@
-#import "NEBLGetTokenMetadataResponseMetadataOfIssuanceDataUserDataMeta.h"
+#import "NEBLGetTokenMetadataResponseMetadataOfIssuenceDataUserDataMeta.h"
 
-@implementation NEBLGetTokenMetadataResponseMetadataOfIssuanceDataUserDataMeta
+@implementation NEBLGetTokenMetadataResponseMetadataOfIssuenceDataUserDataMeta
 
 - (instancetype)init {
   self = [super init];

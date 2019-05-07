@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**getAddressInfo**](NEBLNTP1Api.md#getaddressinfo) | **GET** /ntp1/addressinfo/{address} | Information On a Neblio Address
 [**getTokenHolders**](NEBLNTP1Api.md#gettokenholders) | **GET** /ntp1/stakeholders/{tokenid} | Get Addresses Holding a Token
 [**getTokenId**](NEBLNTP1Api.md#gettokenid) | **GET** /ntp1/tokenid/{tokensymbol} | Returns the tokenId representing a token
-[**getTokenMetadataOfIssuance**](NEBLNTP1Api.md#gettokenmetadataofissuance) | **GET** /ntp1/tokenmetadata/{tokenid} | Get Issuance Metadata of Token
+[**getTokenMetadata**](NEBLNTP1Api.md#gettokenmetadata) | **GET** /ntp1/tokenmetadata/{tokenid} | Get Metadata of Token
 [**getTokenMetadataOfUtxo**](NEBLNTP1Api.md#gettokenmetadataofutxo) | **GET** /ntp1/tokenmetadata/{tokenid}/{utxo} | Get UTXO Metadata of Token
 [**getTransactionInfo**](NEBLNTP1Api.md#gettransactioninfo) | **GET** /ntp1/transactioninfo/{txid} | Information On an NTP1 Transaction
 [**issueToken**](NEBLNTP1Api.md#issuetoken) | **POST** /ntp1/issue | Builds a transaction that issues a new NTP1 Token
@@ -266,15 +266,15 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getTokenMetadataOfIssuance**
+# **getTokenMetadata**
 ```objc
--(NSURLSessionTask*) getTokenMetadataOfIssuanceWithTokenid: (NSString*) tokenid
+-(NSURLSessionTask*) getTokenMetadataWithTokenid: (NSString*) tokenid
         completionHandler: (void (^)(NEBLGetTokenMetadataResponse* output, NSError* error)) handler;
 ```
 
-Get Issuance Metadata of Token
+Get Metadata of Token
 
-Returns the metadata associated with a token at time of issuance. 
+Returns the metadata associated with a token. 
 
 ### Example 
 ```objc
@@ -283,14 +283,14 @@ NSString* tokenid = @"tokenid_example"; // TokenId to request metadata for
 
 NEBLNTP1Api*apiInstance = [[NEBLNTP1Api alloc] init];
 
-// Get Issuance Metadata of Token
-[apiInstance getTokenMetadataOfIssuanceWithTokenid:tokenid
+// Get Metadata of Token
+[apiInstance getTokenMetadataWithTokenid:tokenid
           completionHandler: ^(NEBLGetTokenMetadataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling NEBLNTP1Api->getTokenMetadataOfIssuance: %@", error);
+                            NSLog(@"Error calling NEBLNTP1Api->getTokenMetadata: %@", error);
                         }
                     }];
 ```

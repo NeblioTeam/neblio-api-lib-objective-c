@@ -1,6 +1,6 @@
-#import "NEBLGetTokenMetadataResponseMetadataOfIssuanceData.h"
+#import "NEBLGetTokenMetadataResponseMetadataOfIssuence.h"
 
-@implementation NEBLGetTokenMetadataResponseMetadataOfIssuanceData
+@implementation NEBLGetTokenMetadataResponseMetadataOfIssuence
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"tokenName": @"tokenName", @"issuer": @"issuer", @"_description": @"description", @"userData": @"userData" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"data": @"data" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"tokenName", @"issuer", @"_description", @"userData"];
+  NSArray *optionalProperties = @[@"data"];
   return [optionalProperties containsObject:propertyName];
 }
 

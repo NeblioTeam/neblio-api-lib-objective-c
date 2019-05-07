@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **issuer** | **NSString*** | Name of token issuer | [optional] 
 **_description** | **NSString*** | Long name or description of token (ex. Nibble) | [optional] 
 **urls** | [**NSArray&lt;NEBLIssueTokenRequestMetadataUrls&gt;***](NEBLIssueTokenRequestMetadataUrls.md) |  | [optional] 
-**userData** | [**NEBLGetTokenMetadataResponseMetadataOfIssuanceDataUserData***](NEBLGetTokenMetadataResponseMetadataOfIssuanceDataUserData.md) |  | [optional] 
+**userData** | [**NEBLGetTokenMetadataResponseMetadataOfIssuenceDataUserData***](NEBLGetTokenMetadataResponseMetadataOfIssuenceDataUserData.md) |  | [optional] 
 **encryptions** | [**NSArray&lt;NEBLIssueTokenRequestMetadataEncryptions&gt;***](NEBLIssueTokenRequestMetadataEncryptions.md) | Array of encryption instruction objects for encrypting userData | [optional] 
 **rules** | [**NEBLIssueTokenRequestMetadataRules***](NEBLIssueTokenRequestMetadataRules.md) |  | [optional] 
 

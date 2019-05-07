@@ -399,13 +399,13 @@ NSInteger kNEBLNTP1ApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Get Issuance Metadata of Token
-/// Returns the metadata associated with a token at time of issuance. 
+/// Get Metadata of Token
+/// Returns the metadata associated with a token. 
 ///  @param tokenid TokenId to request metadata for 
 ///
 ///  @returns NEBLGetTokenMetadataResponse*
 ///
--(NSURLSessionTask*) getTokenMetadataOfIssuanceWithTokenid: (NSString*) tokenid
+-(NSURLSessionTask*) getTokenMetadataWithTokenid: (NSString*) tokenid
     completionHandler: (void (^)(NEBLGetTokenMetadataResponse* output, NSError* error)) handler {
     // verify the required parameter 'tokenid' is set
     if (tokenid == nil) {

@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"tokenId": @"tokenId", @"divisibility": @"divisibility", @"lockStatus": @"lockStatus", @"aggregationPolicy": @"aggregationPolicy", @"totalSupply": @"totalSupply", @"numOfHolders": @"numOfHolders", @"numOfTransfers": @"numOfTransfers", @"numofIssuance": @"numofIssuance", @"numOfBurns": @"numOfBurns", @"firstBlock": @"firstBlock", @"issuanceTxid": @"issuanceTxid", @"issueAddress": @"issueAddress", @"metadataOfIssuance": @"metadataOfIssuance", @"metadataOfUtxo": @"metadataOfUtxo" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"tokenId": @"tokenId", @"divisibility": @"divisibility", @"lockStatus": @"lockStatus", @"aggregationPolicy": @"aggregationPolicy", @"totalSupply": @"totalSupply", @"numOfHolders": @"numOfHolders", @"numOfTransfers": @"numOfTransfers", @"numOfIssuance": @"numOfIssuance", @"numOfBurns": @"numOfBurns", @"firstBlock": @"firstBlock", @"issuanceTxid": @"issuanceTxid", @"issueAddress": @"issueAddress", @"metadataOfIssuence": @"metadataOfIssuence", @"metadataOfUtxo": @"metadataOfUtxo" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"tokenId", @"divisibility", @"lockStatus", @"aggregationPolicy", @"totalSupply", @"numOfHolders", @"numOfTransfers", @"numofIssuance", @"numOfBurns", @"firstBlock", @"issuanceTxid", @"issueAddress", @"metadataOfIssuance", @"metadataOfUtxo"];
+  NSArray *optionalProperties = @[@"tokenId", @"divisibility", @"lockStatus", @"aggregationPolicy", @"totalSupply", @"numOfHolders", @"numOfTransfers", @"numOfIssuance", @"numOfBurns", @"firstBlock", @"issuanceTxid", @"issueAddress", @"metadataOfIssuence", @"metadataOfUtxo"];
   return [optionalProperties containsObject:propertyName];
 }
 

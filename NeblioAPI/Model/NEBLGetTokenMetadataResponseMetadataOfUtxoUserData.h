@@ -20,10 +20,10 @@
 
 
 
-@protocol NEBLGetTokenMetadataResponseMetadataOfIssuenceDataUserData
+@protocol NEBLGetTokenMetadataResponseMetadataOfUtxoUserData
 @end
 
-@interface NEBLGetTokenMetadataResponseMetadataOfIssuenceDataUserData : NEBLObject
+@interface NEBLGetTokenMetadataResponseMetadataOfUtxoUserData : NEBLObject
 
 
 @property(nonatomic) NSArray<NEBLGetTokenMetadataResponseMetadataOfIssuenceDataUserDataMeta>* meta;

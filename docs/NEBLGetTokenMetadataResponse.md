@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **issuanceTxid** | **NSString*** | TXID the token was issued with | [optional] 
 **issueAddress** | **NSString*** | Address that issued the tokens | [optional] 
 **metadataOfIssuence** | [**NEBLGetTokenMetadataResponseMetadataOfIssuence***](NEBLGetTokenMetadataResponseMetadataOfIssuence.md) |  | [optional] 
-**metadataOfUtxo** | [**NEBLGetTokenMetadataResponseMetadataOfIssuence***](NEBLGetTokenMetadataResponseMetadataOfIssuence.md) |  | [optional] 
+**metadataOfUtxo** | [**NEBLGetTokenMetadataResponseMetadataOfUtxo***](NEBLGetTokenMetadataResponseMetadataOfUtxo.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

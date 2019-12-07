@@ -269,6 +269,7 @@ No authorization required
 # **testnetGetTokenMetadata**
 ```objc
 -(NSURLSessionTask*) testnetGetTokenMetadataWithTokenid: (NSString*) tokenid
+    verbosity: (NSNumber*) verbosity
         completionHandler: (void (^)(NEBLGetTokenMetadataResponse* output, NSError* error)) handler;
 ```
 
@@ -280,11 +281,13 @@ Returns the metadata associated with a token.
 ```objc
 
 NSString* tokenid = @"tokenid_example"; // TokenId to request metadata for
+NSNumber* verbosity = @56; // 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses (optional)
 
 NEBLTestnetNTP1Api*apiInstance = [[NEBLTestnetNTP1Api alloc] init];
 
 // Get Metadata of Token
 [apiInstance testnetGetTokenMetadataWithTokenid:tokenid
+              verbosity:verbosity
           completionHandler: ^(NEBLGetTokenMetadataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -300,6 +303,7 @@ NEBLTestnetNTP1Api*apiInstance = [[NEBLTestnetNTP1Api alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenid** | **NSString***| TokenId to request metadata for | 
+ **verbosity** | **NSNumber***| 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses | [optional] 
 
 ### Return type
 
@@ -320,6 +324,7 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) testnetGetTokenMetadataOfUtxoWithTokenid: (NSString*) tokenid
     utxo: (NSString*) utxo
+    verbosity: (NSNumber*) verbosity
         completionHandler: (void (^)(NEBLGetTokenMetadataResponse* output, NSError* error)) handler;
 ```
 
@@ -332,12 +337,14 @@ Returns the metadata associated with a token for that specific utxo instead of t
 
 NSString* tokenid = @"tokenid_example"; // TokenId to request metadata for
 NSString* utxo = @"utxo_example"; // Specific UTXO to request metadata for
+NSNumber* verbosity = @56; // 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses (optional)
 
 NEBLTestnetNTP1Api*apiInstance = [[NEBLTestnetNTP1Api alloc] init];
 
 // Get UTXO Metadata of Token
 [apiInstance testnetGetTokenMetadataOfUtxoWithTokenid:tokenid
               utxo:utxo
+              verbosity:verbosity
           completionHandler: ^(NEBLGetTokenMetadataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -354,6 +361,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenid** | **NSString***| TokenId to request metadata for | 
  **utxo** | **NSString***| Specific UTXO to request metadata for | 
+ **verbosity** | **NSNumber***| 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses | [optional] 
 
 ### Return type
 

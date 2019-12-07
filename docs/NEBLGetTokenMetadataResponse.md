@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **divisibility** | **NSNumber*** | Decimal places the token is divisible to | [optional] 
 **lockStatus** | **NSNumber*** | Whether issuance of more tokens is locked | [optional] 
 **aggregationPolicy** | **NSString*** | Whether the tokens are aggregatable | [optional] 
+**initialIssuanceAmount** | **NSNumber*** | Total tokens issued in initial issuance | [optional] 
 **totalSupply** | **NSNumber*** | Total number of tokens in supply | [optional] 
 **numOfHolders** | **NSNumber*** | Total number of addresses this token is held at | [optional] 
 **numOfTransfers** | **NSNumber*** | Total number of transactions of this token | [optional] 
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 **firstBlock** | **NSNumber*** | Block number token was issued in | [optional] 
 **issuanceTxid** | **NSString*** | TXID the token was issued with | [optional] 
 **issueAddress** | **NSString*** | Address that issued the tokens | [optional] 
-**metadataOfIssuence** | [**NEBLGetTokenMetadataResponseMetadataOfIssuence***](NEBLGetTokenMetadataResponseMetadataOfIssuence.md) |  | [optional] 
+**metadataOfIssuance** | [**NEBLGetTokenMetadataResponseMetadataOfIssuance***](NEBLGetTokenMetadataResponseMetadataOfIssuance.md) |  | [optional] 
 **metadataOfUtxo** | [**NEBLGetTokenMetadataResponseMetadataOfUtxo***](NEBLGetTokenMetadataResponseMetadataOfUtxo.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

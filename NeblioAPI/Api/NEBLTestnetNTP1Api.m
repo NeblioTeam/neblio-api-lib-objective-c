@@ -403,9 +403,12 @@ NSInteger kNEBLTestnetNTP1ApiMissingParamErrorCode = 234513;
 /// Returns the metadata associated with a token. 
 ///  @param tokenid TokenId to request metadata for 
 ///
+///  @param verbosity 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses (optional)
+///
 ///  @returns NEBLGetTokenMetadataResponse*
 ///
 -(NSURLSessionTask*) testnetGetTokenMetadataWithTokenid: (NSString*) tokenid
+    verbosity: (NSNumber*) verbosity
     completionHandler: (void (^)(NEBLGetTokenMetadataResponse* output, NSError* error)) handler {
     // verify the required parameter 'tokenid' is set
     if (tokenid == nil) {
@@ -426,6 +429,9 @@ NSInteger kNEBLTestnetNTP1ApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (verbosity != nil) {
+        queryParams[@"verbosity"] = verbosity;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -473,10 +479,13 @@ NSInteger kNEBLTestnetNTP1ApiMissingParamErrorCode = 234513;
 ///
 ///  @param utxo Specific UTXO to request metadata for 
 ///
+///  @param verbosity 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses (optional)
+///
 ///  @returns NEBLGetTokenMetadataResponse*
 ///
 -(NSURLSessionTask*) testnetGetTokenMetadataOfUtxoWithTokenid: (NSString*) tokenid
     utxo: (NSString*) utxo
+    verbosity: (NSNumber*) verbosity
     completionHandler: (void (^)(NEBLGetTokenMetadataResponse* output, NSError* error)) handler {
     // verify the required parameter 'tokenid' is set
     if (tokenid == nil) {
@@ -511,6 +520,9 @@ NSInteger kNEBLTestnetNTP1ApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (verbosity != nil) {
+        queryParams[@"verbosity"] = verbosity;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`

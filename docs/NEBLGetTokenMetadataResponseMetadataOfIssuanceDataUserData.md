@@ -1,10 +1,9 @@
-# NEBLGetTokenMetadataResponseMetadataOfIssuenceDataUserDataMeta
+# NEBLGetTokenMetadataResponseMetadataOfIssuanceDataUserData
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **NSString*** |  | [optional] 
-**value** | **NSString*** |  | [optional] 
+**meta** | [**NSArray&lt;NEBLGetTokenMetadataResponseMetadataOfIssuanceDataUserDataMeta&gt;***](NEBLGetTokenMetadataResponseMetadataOfIssuanceDataUserDataMeta.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

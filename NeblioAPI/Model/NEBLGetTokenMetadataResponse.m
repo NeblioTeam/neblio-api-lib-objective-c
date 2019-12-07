@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"tokenId": @"tokenId", @"someUtxo": @"someUtxo", @"divisibility": @"divisibility", @"lockStatus": @"lockStatus", @"aggregationPolicy": @"aggregationPolicy", @"totalSupply": @"totalSupply", @"numOfHolders": @"numOfHolders", @"numOfTransfers": @"numOfTransfers", @"numOfIssuance": @"numOfIssuance", @"numOfBurns": @"numOfBurns", @"firstBlock": @"firstBlock", @"issuanceTxid": @"issuanceTxid", @"issueAddress": @"issueAddress", @"metadataOfIssuence": @"metadataOfIssuence", @"metadataOfUtxo": @"metadataOfUtxo" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"tokenId": @"tokenId", @"someUtxo": @"someUtxo", @"divisibility": @"divisibility", @"lockStatus": @"lockStatus", @"aggregationPolicy": @"aggregationPolicy", @"initialIssuanceAmount": @"initialIssuanceAmount", @"totalSupply": @"totalSupply", @"numOfHolders": @"numOfHolders", @"numOfTransfers": @"numOfTransfers", @"numOfIssuance": @"numOfIssuance", @"numOfBurns": @"numOfBurns", @"firstBlock": @"firstBlock", @"issuanceTxid": @"issuanceTxid", @"issueAddress": @"issueAddress", @"metadataOfIssuance": @"metadataOfIssuance", @"metadataOfUtxo": @"metadataOfUtxo" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"tokenId", @"someUtxo", @"divisibility", @"lockStatus", @"aggregationPolicy", @"totalSupply", @"numOfHolders", @"numOfTransfers", @"numOfIssuance", @"numOfBurns", @"firstBlock", @"issuanceTxid", @"issueAddress", @"metadataOfIssuence", @"metadataOfUtxo"];
+  NSArray *optionalProperties = @[@"tokenId", @"someUtxo", @"divisibility", @"lockStatus", @"aggregationPolicy", @"initialIssuanceAmount", @"totalSupply", @"numOfHolders", @"numOfTransfers", @"numOfIssuance", @"numOfBurns", @"firstBlock", @"issuanceTxid", @"issueAddress", @"metadataOfIssuance", @"metadataOfUtxo"];
   return [optionalProperties containsObject:propertyName];
 }
 
